@@ -11,7 +11,6 @@ RUN curl -fsSLO https://packages.microsoft.com/config/debian/9/prod.list && \
 RUN sudo apt-get -y -qq update
 RUN sudo apt-get -y -qq install dotnet-sdk-2.2
 ENV DMD 2.085.1
-RUN curl -fsSLO --retry 3 "http://downloads.dlang.org/releases/2.x/$DMD/dmd.$DMD.linux.tar.xz" && \
-    tar xf dmd.$DMD.linux.tar.xz &&\
-    sudo cp -rf dmd2/linux/* /usr/local
-RUN sudo rm -rf /tmp
+RUN curl -fsSLO --retry 3 "http://downloads.dlang.org/releases/2.x/$DMD/dmd_$DMD-0_amd64.deb" && \
+    sudo dpkg -i dmd_$DMD-0_amd64.deb &&\
+    rm dmd_$DMD-0_amd64.deb
