@@ -1,0 +1,48 @@
+ROOT_DIR = ../
+ROOT = ..
+SELF_PATH = phobos/
+BODYCLASS = std
+SEARCHDEFAULT_PHOBOS = selected
+BODY_PREFIX = $(DIVCID quickindex, quickindex, )
+LAYOUT_SUFFIX =
+$(SCRIPTLOAD ../js/listanchors.js)
+$(SCRIPTLOAD ../js/show_contributors.js)
+$(SCRIPT jQuery(document).ready(listanchors);)
+LAYOUT_TITLE=$(H1 $(D_TITLE $(TITLE)))
+_=
+
+LREF = <a href="#$1">$(D $1)</a>
+_=
+
+_=Override PHOBOS_PATH to use relative paths in Phobos module and symbol links
+PHOBOS_PATH=
+_=
+
+LEADINGROW = <tr class="leadingrow"><td colspan="2"><b><em>$(NBSP)$(NBSP)$(NBSP)$(NBSP)$0</em></b></td></tr>
+LEADINGROWN = <tr class="leadingrow"><td colspan="$1"><b><em>$(NBSP)$(NBSP)$(NBSP)$(NBSP)$+</em></b></td></tr>
+TABLE = <table cellspacing="0" cellpadding="5"><caption>$1</caption>$+</table>
+TD = <td>$0</td>
+TDNW = <td class="donthyphenate nobr">$0</td>
+SUB_IS_DEPRECATED=kept for compatibility, but collides with SUB=&sub; use SUBSCRIPT instead (this is a comment and can be changed into one if ddoc files ever start supporting comments)
+MYREF = <a href="#.$1">$(TT $1)</a>$(NBSP)
+_=
+
+MODULE=<a href="$2$(JOIN_LINE_TAIL $+).html" title="$2$(JOIN_DOT_TAIL $+)">$(D $1)</a>
+MODULE2=$(MODULE $2, $1, $+)
+MODULE3=$(MODULE $3, $1, $+)
+MODULE4=$(MODULE $4, $1, $+)
+MODULE5=$(MODULE $5, $1, $+)
+MODULE6=$(MODULE $6, $1, $+)
+MODULE7=$(MODULE $7, $1, $+)
+MODULE8=$(MODULE $8, $1, $+)
+PACKAGE=$1$(ITEMIZE $+)
+PACKAGE_NAME=$(T h7,$(D $1))
+JOIN_LINE_TAIL=$(JOIN_LINE $+)
+JOIN_LINE=_$1$(JOIN_LINE $+)
+JOIN_DOT_TAIL=$(JOIN_DOT $+)
+JOIN_DOT=.$1$(JOIN_DOT $+)
+TAIL=$+
+_=
+
+DDOC_BLANKLINE = $(DIVC blankline)$(LF)
+_=
