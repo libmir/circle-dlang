@@ -12,7 +12,7 @@ RUN curl -fsSLO https://packages.microsoft.com/config/debian/9/prod.list && \
 RUN sudo add-apt-repository "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-8 main" && sudo add-apt-repository universe
 RUN sudo apt-get -y -qq update
 RUN sudo apt-get -y -qq install dotnet-sdk-2.2 clang-8 lldb-8 lld-8
-ENV DMD 2.087.1
+ENV DMD 2.091.0
 RUN curl -fsSLO --retry 3 "http://downloads.dlang.org/releases/2.x/$DMD/dmd_$DMD-0_amd64.deb" && \
     sudo dpkg -i dmd_$DMD-0_amd64.deb &&\
     rm dmd_$DMD-0_amd64.deb
