@@ -16,15 +16,17 @@ ENV DMD 2.091.0
 ENV LDC 1.20.1
 RUN curl -fsSLO --retry 3 "https://github.com/ldc-developers/ldc/releases/download/v$LDC/ldc2-$LDC-linux-x86_64.tar.xz"
 RUN tar xf ldc2-$LDC-linux-x86_64.tar.xz \
- && sudo cp -r ldc2-$LDC-linux-x86_64/bin /usr/local/bin \
- && sudo cp -r ldc2-$LDC-linux-x86_64/lib /usr/local/lib \
- && sudo cp -r ldc2-$LDC-linux-x86_64/etc /usr/local/etc \
- && sudo cp -r ldc2-$LDC-linux-x86_64/import /usr/local/import
+ && sudo cp -r ldc2-$LDC-linux-x86_64/bin /usr \
+ && sudo cp -r ldc2-$LDC-linux-x86_64/lib /usr \
+ && sudo cp -r ldc2-$LDC-linux-x86_64/etc /usr \
+ && sudo cp -r ldc2-$LDC-linux-x86_64/import /usr \
+ && rm -r ldc2-$LDC-linux-x86_64 \
+ && rm ldc2-$LDC-linux-x86_64.tar.xz
 RUN curl -fsSLO --retry 3 "https://github.com/dlang/tools/archive/v$DMD.tar.gz" \
  && tar xf v$DMD.tar.gz \
  && cd tools-$DMD \
  && dub build --build=release :tests_extractor \
- && sudo cp dtools_tests_extractor /usr/local/bin \
+ && sudo cp dtools_tests_extractor /usr/bin \
  && cd .. \
  && rm -rf tolos-$DMD
 ENV CC="clang-10" CXX="clang++-10"
