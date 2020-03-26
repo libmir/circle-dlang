@@ -25,5 +25,5 @@ RUN curl -fsSLO --retry 3 "https://github.com/dlang/tools/archive/v$DMD.tar.gz" 
  && rm -rf tolos-$DMD
 ENV CC="clang-10" CXX="clang++-10"
 WORKDIR /
-COPY docgen ./
-COPY web ./
+COPY docgen /docgen
+COPY web /web
