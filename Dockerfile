@@ -13,9 +13,13 @@ RUN sudo add-apt-repository "deb http://apt.llvm.org/buster/ llvm-toolchain-bust
 RUN sudo apt-get -y -qq update
 RUN sudo apt-get -y -qq install dotnet-sdk-2.2 clang-10 lldb-10 lld-10
 ENV DMD 2.091.0
-RUN curl -fsSLO --retry 3 "http://downloads.dlang.org/releases/2.x/$DMD/dmd_$DMD-0_amd64.deb" && \
-    sudo dpkg -i dmd_$DMD-0_amd64.deb &&\
-    rm dmd_$DMD-0_amd64.deb
+ENV LDC 1.20.1
+RUN curl -fsSLO --retry 3 "https://github.com/ldc-developers/ldc/releases/download/v$LDC/ldc2-$LDC-linux-x86_64.tar.xz"
+RUN tar xf ldc2-$LDC-linux-x86_64.tar.xz \
+ && sudo cp -r ldc2-$LDC-linux-x86_64/bin /usr/local/bin \
+ && sudo cp -r ldc2-$LDC-linux-x86_64/lib /usr/local/lib \
+ && sudo cp -r ldc2-$LDC-linux-x86_64/etc /usr/local/etc \
+ && sudo cp -r ldc2-$LDC-linux-x86_64/import /usr/local/import
 RUN curl -fsSLO --retry 3 "https://github.com/dlang/tools/archive/v$DMD.tar.gz" \
  && tar xf v$DMD.tar.gz \
  && cd tools-$DMD \
