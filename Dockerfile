@@ -30,8 +30,8 @@ RUN curl -fsSLO --retry 3 "https://github.com/dlang/tools/archive/v$DMD.tar.gz" 
  && cd .. \
  && rm -rf tolos-$DMD
 ENV CC="clang-10" CXX="clang++-10"
-WORKDIR /home/circleci/project
-COPY docgen /home/circleci/project/docgen
-COPY web /home/circleci/project/web
-COPY meson_options.txt /home/circleci/project/meson_options.txt
-COPY meson.build.1 /home/circleci/project/meson.build.1
+WORKDIR /repo
+COPY docgen /repo/docgen
+COPY web /repo/web
+COPY meson_options.txt /repo/meson_options.txt
+COPY meson.build.1 /repo/meson.build.1
