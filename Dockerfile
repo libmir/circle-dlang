@@ -34,4 +34,4 @@ WORKDIR /repo
 COPY docgen /repo/docgen
 COPY web /repo/web
 COPY meson_options.txt /repo/meson_options.txt
-COPY meson.build.1 /meson.build.1
+COPY meson.build.1 /repo/meson.build.1
