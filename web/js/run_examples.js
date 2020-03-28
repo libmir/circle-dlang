@@ -6,12 +6,20 @@
  * License: http://boost.org/LICENSE_1_0.txt, Boost License 1.0
  */
 
+// turns asserts into writeln
+function reformatExample(code) {
+    return code.replace(/(<span class="(?:d_keyword|kwd)">assert<\/span>(?:<span class="pun">)?\((.*)==(.*)\);)+/g, function(match, text, left, right) {
+        return "writeln(" + left.trim() + "); "
+            + "<span class='d_comment'>// " + right.trim() + "</span>";
+    });
+}
+
 // wraps a unittest into a runnable script
 function wrapIntoMain(code) {
     var currentPackage = $('body')[0].id;
     // BUMP package image here: https://github.com/dlang-tour/core-exec/blob/master/Dockerfile
     // run.dlang.io frontend: https://github.com/dlang-tour/core/blob/master/public/static/js/tour-controller.js
-    var codeOut = '/+dub.sdl:\ndependency "'+currentLibrary+'" version="~>'+currentVersion+'"\n+/\n';
+    var codeOut = '/+dub.sdl:\ndependency "'+currentLibrary+'" version="~>'+"*"+'"\n+/\n';
 
     // dynamically wrap into main if needed
     if (code.indexOf("void main") >= 0) {
@@ -45,6 +53,9 @@ $(document).ready(function()
         var currentExample = $(this);
         var orig = currentExample.html();
 
+        // disable regex assert -> writeln rewrite logic (for now)
+        //orig = reformatExample(orig);
+
         // check whether it is from a ddoced unittest
         // 1) check is for ddoc, 2) for ddox
         // manual created tests most likely can't be run without modifications
@@ -64,7 +75,7 @@ $(document).ready(function()
           + '<div class="editButton"><i class="fa fa-edit" aria-hidden="true"></i> Edit</div>'
           + '<div class="runButton"><i class="fa fa-play" aria-hidden="true"></i> Run</div>'
           + '<div class="resetButton" style="display:none"><i class="fa fa-undo " aria-hidden="true"></i> Reset</div>'
-          + '<div class="openInEditorButton" title="Open in an external editor"><i class="fa fa-external-link" aria-hidden="true"></i></div>'
+          + '<div class="openInEditorButton" title="Open in an external editor"><i class="fa fa-external-link" aria-hidden="true"></i>Open in IDE</div>'
                     + '</div>'
                     + '<div class="d_code_output"><span class="d_code_title">Application output</span><br><pre class="d_code_output" readonly>Running...</pre>'
                 + '</div>'
