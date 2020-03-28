@@ -38,8 +38,7 @@ struct Tree
     {
         foreach (i, ref l; leaves)
         {
-            l.dumpRoots();
-            writeln();
+            l.dumpRoot();
         }
     }
 
