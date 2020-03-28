@@ -7,18 +7,18 @@ custom color for mir
 */
 
 #top {
-    background: #181839;
-    border-bottom: 1px #000 solid;
+    background: #1e898d;
+    border-bottom: 1px #1b5052 solid;
 }
 
 #top #cssmenu > ul > li > ul
 {
-    background: #181839;
-    border: 1px solid #181829;
+    background: #1e898d;
+    border: 1px solid #1b5052;
 }
 
 #top a:hover, #top #cssmenu li.open > a, #top #cssmenu li.active > a {
-    background: #181829;
+    background: #1b5052;
 }
 
 a, .question, .expand-toggle {
@@ -26,11 +26,11 @@ a, .question, .expand-toggle {
 }
 
 a:hover, .question:hover, .expand-toggle:hover {
-    color: #181829;
+    color: #1b5052;
 }
 
 .d_decl {
-    border-left: 5px solid #181829;
+    border-left: 5px solid #1b5052;
 }
 
 #top img#logo
