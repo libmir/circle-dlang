@@ -12,8 +12,9 @@ if get_option('with_test')
 
     test(meson.project_name() + '-test', test_exe)
 
-    subdir('cpp_example')
-
+    foreach dir : test_subdirs
+        subdir(dir)
+    endforeach
 endif
 
 if get_option('with_doc')
