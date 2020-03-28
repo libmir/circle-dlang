@@ -33,5 +33,5 @@ ENV CC="clang-10" CXX="clang++-10"
 WORKDIR /repo
 COPY docgen /repo/docgen
 COPY web /repo/web
-COPY meson_options.txt /repo/meson_options.txt
+COPY meson_options.txt.1 /repo/meson_options.txt.1
 COPY meson.build.1 /repo/meson.build.1
