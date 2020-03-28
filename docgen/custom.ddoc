@@ -104,13 +104,12 @@ MIR_PROJECTS=
 $(SUBMENU_MANUAL
     $(SUBMENU_LINK http://mir-algorithm.libmir.org, Mir Algorithm)
     $(SUBMENU_LINK http://mir-core.libmir.org, Mir Core)
-    $(SUBMENU_LINK http://mir-runtime.libmir.org, Mir Runtime)
     $(SUBMENU_LINK http://mir-random.libmir.org, Mir Random)
     $(SUBMENU_LINK http://mir-optim.libmir.org, Mir Optim)
     $(SUBMENU_LINK http://mir-cpuid.libmir.org, Mir CPUID)
     $(SUBMENU_LINK http://mir-blas.libmir.org, Mir BLAS)
-    $(SUBMENU_LINK http://mir-lapacl.libmir.org, Mir LAPACK)
-    $(SUBMENU_LINK http://mir.libmir.org, Mir)
+    $(SUBMENU_LINK http://mir-lapack.libmir.org, Mir LAPACK)
+    $(SUBMENU_LINK http://mir.libmir.org, Mir Backport)
     $(SUBMENU_LINK http://asdf.libmir.org, ASDF - JSON library)
 )
 _=
