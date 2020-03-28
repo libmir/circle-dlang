@@ -34,6 +34,15 @@ struct Tree
             l.sort();
     }
 
+    void dumpRoots()
+    {
+        foreach (i, ref l; leaves)
+        {
+            l.dumpRoots();
+            writeln();
+        }
+    }
+
     void dumpRoot()
     {
         writeln();
@@ -120,7 +129,7 @@ int main(string[] args)
     tree.sort();
 
     writeln("MODULE_MENU=");
-    tree["mir"].dumpRoot();
+    tree.dumpRoots();
     writeln("_=");
     return 0;
 }

@@ -173,7 +173,7 @@ body.std textarea
 /* Hide expandable sections by default in #cssmenu. They have fallback URLs. */
 #top #cssmenu .expand-container > *
 {
-    display: none;
+    display: block;
 }
 #top #cssmenu .expand-container.open > *,
 #top #cssmenu .expand-container > .expand-toggle
