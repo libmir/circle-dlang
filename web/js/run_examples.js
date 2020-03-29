@@ -16,19 +16,19 @@ function reformatExample(code) {
 
 // wraps a unittest into a runnable script
 function wrapIntoMain(code) {
-    var currentPackage = $('body')[0].id;
+    var currentModule = $('body')[0].id;
     // BUMP package image here: https://github.com/dlang-tour/core-exec/blob/master/Dockerfile
     // run.dlang.io frontend: https://github.com/dlang-tour/core/blob/master/public/static/js/tour-controller.js
-    var codeOut = '/+dub.sdl:\ndependency "'+currentLibrary+'" version="*"\n+/\n';
+    var codeOut = '/+dub.sdl:\ndependency "'+currentProject+'" version="*"\n+/\n';
 
     // dynamically wrap into main if needed
     if (code.indexOf("void main") >= 0) {
-        codeOut += "import " + currentPackage + "; ";
+        codeOut += "import " + currentModule + "; ";
         codeOut += code;
     }
     else {
         codeOut += "void main()\n{\n";
-        codeOut += "    import " + currentPackage + ";\n";
+        codeOut += "    import " + currentModule + ";\n";
         // writing to the stdout is probably often used
         codeOut += "    import std.stdio: write, writeln, writef, writefln;\n    ";
         codeOut += code.split("\n").join("\n    ");
