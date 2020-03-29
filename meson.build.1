@@ -61,12 +61,12 @@ if get_option('with_doc')
 
     extra_args = [d_compiler, '-w', '-c', '-o-',
             docs_config,
-            'mir.ddoc',
             join_paths(root, 'docgen/macros.ddoc'),
             join_paths(root, 'docgen/html.ddoc'),
             join_paths(root, 'docgen/dlang.org.ddoc'),
             join_paths(root, 'docgen/std.ddoc'),
             join_paths(root, 'docgen/custom.ddoc'),
+            'mir.ddoc',
             includes,
             '-Dfweb/@OUTPUT@', '@INPUT@']
 
