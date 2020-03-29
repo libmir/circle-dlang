@@ -7,13 +7,13 @@ custom color for mir
 */
 
 #top {
-    background: #22a7ff;
+    background: #0086df;
     border-bottom: 1px #1769a0 solid;
 }
 
 #top #cssmenu > ul > li > ul
 {
-    background: #22a7ff;
+    background: #0086df;
     border: 1px solid #1769a0;
 }
 
