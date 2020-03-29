@@ -1,4 +1,4 @@
-MREF0=$(LINK2 $(PHOBOS_PATH)$1$.html, $(D $1$))
+MREF0=$(LINK2 $(PHOBOS_PATH)$1.html, $(D $1))
 
 _=
 META_KEYWORDS=algorithm mir libmir numeric blas array vector tensor numpy math stats
