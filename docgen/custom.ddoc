@@ -105,15 +105,16 @@ _=
 
 MIR_PROJECTS=
 $(SUBMENU_MANUAL
-    $(SUBMENU_LINK http://mir-algorithm.libmir.org, Mir Algorithm)
-    $(SUBMENU_LINK http://mir-core.libmir.org, Mir Core)
-    $(SUBMENU_LINK http://mir-random.libmir.org, Mir Random)
-    $(SUBMENU_LINK http://mir-optim.libmir.org, Mir Optim)
-    $(SUBMENU_LINK http://mir-cpuid.libmir.org, Mir CPUID)
-    $(SUBMENU_LINK http://mir-blas.libmir.org, Mir BLAS)
-    $(SUBMENU_LINK http://mir-lapack.libmir.org, Mir LAPACK)
-    $(SUBMENU_LINK http://mir.libmir.org, Mir Backport)
-    $(SUBMENU_LINK http://asdf.libmir.org, ASDF - JSON library)
+    $(SUBMENU_LINK http://asdf.libmir.org, asdf - JSON library)
+    $(SUBMENU_LINK http://mir-algorithm.libmir.org, mir-algorithm)
+    $(SUBMENU_LINK http://mir-blas.libmir.org, mir-blas)
+    $(SUBMENU_LINK http://mir-core.libmir.org, mir-core)
+    $(SUBMENU_LINK http://mir-cpuid.libmir.org, mir-cpuid)
+    $(SUBMENU_LINK http://mir-integral.libmir.org, mir-integral)
+    $(SUBMENU_LINK http://mir-lapack.libmir.org, mir-lapack)
+    $(SUBMENU_LINK http://mir-optim.libmir.org, mir-optim)
+    $(SUBMENU_LINK http://mir-random.libmir.org, mir-random)
+    $(SUBMENU_LINK http://mir.libmir.org, mir (backports))
 )
 _=
 
