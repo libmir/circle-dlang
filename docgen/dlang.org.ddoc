@@ -48,7 +48,7 @@ COMPATIBILITY_BOX_EXPERIMENTAL = $(MESSAGE_BOX orange, $(B Experimental) - $0)
 _=
 
 CONSOLE=$(TC pre, console notranslate, $0)
-COPYRIGHT_FOUNDATION=Copyright &copy; 1999-$(YEAR) by the $(LINK2 $(ROOT_DIR)foundation_overview.html, D Language Foundation)
+COPYRIGHT_FOUNDATION=Copyright &copy; 2016-$(YEAR) by Ilya Yaroshenko
 CPPCODE=$(TC pre, cppcode notranslate, $0)
 CPPLISTING=$(CPPCODE $0)
 CROSS=&#x2718;
@@ -63,9 +63,8 @@ DDOC=
 <!DOCTYPE html>
 <html lang="en-US">
 <!--
-    Copyright (c) 1999-$(YEAR) by the D Language Foundation
+    Copyright (c) 1999-$(YEAR) by Ilya Yaroshenko
     All Rights Reserved.
-    https://dlang.org/foundation_overview.html
   -->
 <head>
 <meta charset="utf-8">
