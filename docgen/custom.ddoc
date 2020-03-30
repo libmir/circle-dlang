@@ -94,7 +94,7 @@ _=
 
 NAVIGATION=
 $(DIVID cssmenu, $(UL
-    $(MENU_W_SUBMENU_LINK $(ROOT_DIR)mir.html, Mir Libraries)
+    $(MENU_W_SUBMENU_LINK https://libmir.org, Mir Libraries)
       $(MIR_PROJECTS)
     $(MENU https://github.com/libmir/$(PROJECT), GitHub)
     $(MENU https://forum.dlang.org/group/learn , Forum)
