@@ -59,7 +59,7 @@ if get_option('with_doc')
         includes += '-I' + join_paths(root, 'subprojects', sub_name, 'source')
     endforeach
 
-    extra_args = [d_compiler, '-w', '-c', '-o-',
+    extra_args = [d_compiler, '-w', '-c', '-o-', '-preview=dip1008',
             docs_config,
             join_paths(root, 'docgen/macros.ddoc'),
             join_paths(root, 'docgen/html.ddoc'),
