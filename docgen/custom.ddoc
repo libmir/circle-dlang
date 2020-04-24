@@ -16,13 +16,13 @@ _=
 PAGE_TOOLS=
 $(DIVID tools, $(DIV,
 	$(DIVC tip smallprint,
-		$(HTMLTAG3 a, href="https://github.com/libmir/$(PROJECT)/issues", Report a bug)
+		$(HTMLTAG3 a, href="https://github.com/$(COMPANY)/$(PROJECT)/issues", Report a bug)
 		$(DIV,
 			If you spot a problem with this page, click here to create a GitHub issue.
 		)
 	)
 	$(DIVC tip smallprint,
-		<a href="https://github.com/libmir/$(PROJECT)/blob/master/source/$(SRCFILENAME)">Improve this page</a>
+		<a href="https://github.com/$(COMPANY)/$(PROJECT)/blob/master/source/$(SRCFILENAME)">Improve this page</a>
 		$(DIV,
 			Quickly fork, edit online, and submit a pull request for this page.
 			Requires a signed-in GitHub account. This works well for small changes.
@@ -96,9 +96,9 @@ NAVIGATION=
 $(DIVID cssmenu, $(UL
     $(MENU_W_SUBMENU_LINK https://libmir.org, Mir Libraries)
       $(MIR_PROJECTS)
-    $(MENU https://github.com/libmir/$(PROJECT), GitHub)
+    $(MENU https://github.com/$(COMPANY)/$(PROJECT), GitHub)
     $(MENU https://forum.dlang.org/group/learn , Forum)
-    $(MENU https://github.com/libmir/$(PROJECT)/issues, Open Issue)
+    $(MENU https://github.com/$(COMPANY)/$(PROJECT)/issues, Open Issue)
     $(MENU https://dlang.org, Dlang)
 ))
 _=
@@ -115,6 +115,7 @@ $(SUBMENU_MANUAL
     $(SUBMENU_LINK http://mir-optim.libmir.org, mir-optim)
     $(SUBMENU_LINK http://mir-random.libmir.org, mir-random)
     $(SUBMENU_LINK http://mir.libmir.org, mir (backports))
+    $(SUBMENU_LINK http://lubeck.libmir.org, Kaleidic/lubeck)
 )
 _=
 
