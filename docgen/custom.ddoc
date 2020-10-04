@@ -105,17 +105,19 @@ _=
 
 MIR_PROJECTS=
 $(SUBMENU_MANUAL
-    $(SUBMENU_LINK http://asdf.libmir.org, asdf - JSON library)
-    $(SUBMENU_LINK http://mir-algorithm.libmir.org, mir-algorithm)
-    $(SUBMENU_LINK http://mir-blas.libmir.org, mir-blas)
-    $(SUBMENU_LINK http://mir-core.libmir.org, mir-core)
-    $(SUBMENU_LINK http://mir-cpuid.libmir.org, mir-cpuid)
-    $(SUBMENU_LINK http://mir-integral.libmir.org, mir-integral)
-    $(SUBMENU_LINK http://mir-lapack.libmir.org, mir-lapack)
-    $(SUBMENU_LINK http://mir-optim.libmir.org, mir-optim)
-    $(SUBMENU_LINK http://mir-random.libmir.org, mir-random)
+    $(SUBMENU_LINK http://mir-algorithm.libmir.org, mir-algorithm - Base algorithms and types)
+    $(SUBMENU_LINK http://mir-core.libmir.org, mir-core - Slim core library)
+    $(SUBMENU_LINK http://mir-cpuid.libmir.org, mir-cpuid - CPUID identification)
+    $(SUBMENU_LINK http://mir-integral.libmir.org, mir-integral - Integration utilities)
+    $(SUBMENU_LINK http://mir-ion.libmir.org, mir-ion - Json, Ion library)
+    $(SUBMENU_LINK http://mir-optim.libmir.org, mir-optim - Nonlinear programming)
+    $(SUBMENU_LINK http://mir-random.libmir.org, mir-random - Random engines and variables)
+    $(SUBMENU_LINK http://mir-stat.libmir.org, mir-stat - Statistical package)
+    $(SUBMENU_LINK http://mir-lapack.libmir.org, mir-lapack - Linear Algebra wrappers for ndslice)
+    $(SUBMENU_LINK http://mir-blas.libmir.org, mir-blas - CBLAS wrappers for ndslice)
     $(SUBMENU_LINK http://mir.libmir.org, mir (backports))
-    $(SUBMENU_LINK http://lubeck.libmir.org, Kaleidic/lubeck)
+    $(SUBMENU_LINK http://asdf.libmir.org, asdf - Json library)
+    $(SUBMENU_LINK http://lubeck.libmir.org, Kaleidic/lubeck - Linar algebra)
 )
 _=
 
