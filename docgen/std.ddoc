@@ -1,8 +1,8 @@
 ROOT_DIR = ../
 ROOT = ..
-SELF_PATH = phobos/
-BODYCLASS = std
-SEARCHDEFAULT_PHOBOS = selected
+SELF_PATH = Mir/
+BODYCLASS = mir
+SEARCHDEFAULT_MIR = selected
 BODY_PREFIX = $(DIVCID quickindex, quickindex, )
 LAYOUT_SUFFIX =
 $(SCRIPTLOAD ../js/listanchors.js)
@@ -14,8 +14,8 @@ _=
 LREF = <a href="#$1">$(D $1)</a>
 _=
 
-_=Override PHOBOS_PATH to use relative paths in Phobos module and symbol links
-PHOBOS_PATH=
+_=Override MIR_PATH to use relative paths in Mir module and symbol links
+MIR_PATH=
 _=
 
 LEADINGROW = <tr class="leadingrow"><td colspan="2"><b><em>$(NBSP)$(NBSP)$(NBSP)$(NBSP)$0</em></b></td></tr>

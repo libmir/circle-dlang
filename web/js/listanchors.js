@@ -38,7 +38,7 @@ function addVersionSelector() {
   // build URLs for dlang.org: DDoc + Dox
   var ddocModuleURL = document.body.id.replace(/[.]/g, "_") + ".html";
   var ddoxModuleURL = document.body.id.replace(/[.]/g, "/") + ".html";
-  var root = "phobos/";
+  var root = "mir/";
 
   var isSpec = window.location.pathname.indexOf("/spec/") >= 0;
   if (isSpec) {
@@ -66,7 +66,7 @@ function addVersionSelector() {
       };
   });
 
-  var rootURL = location.href.split(/\/(phobos|library|spec)(-prerelease)?/)[0]
+  var rootURL = location.href.split(/\/(mir|library|spec)(-prerelease)?/)[0]
   var onlineVersions;
   if (isSpec) {
     onlineVersions = [{
@@ -76,13 +76,13 @@ function addVersionSelector() {
   } else {
     onlineVersions = [{
       name: "master",
-      url: rootURL + "/phobos-prerelease/" + ddocModuleURL,
+      url: rootURL + "/mir-prerelease/" + ddocModuleURL,
     },{
       name: "master (ddox)",
       url: rootURL + "/library-prerelease/" + ddoxModuleURL,
     },{
       name: "stable",
-      url: rootURL + "/phobos/" + ddocModuleURL,
+      url: rootURL + "/mir/" + ddocModuleURL,
     },{
       name: "stable (ddox)",
       url: rootURL + "/library/" + ddoxModuleURL,

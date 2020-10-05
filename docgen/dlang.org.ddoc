@@ -1,5 +1,7 @@
 _=Macros for the dlang.org site look and feel. Please keep sorted by name. Multiline macros should keep one _= line before and after for clarity. Also, one _= line should be present when the first letter changes. (The "_="" is needed so there's no extra newline after the last macro defined in a group.)
 
+MIR_SITE=libmir.org
+
 ACRONYM = <acronym title="$+">$1</acronym> ($+)
 ASSIGNEXPRESSION = $(GLINK2 expression, AssignExpression)
 _=
@@ -208,7 +210,7 @@ LAYOUT_PREFIX=
 LAYOUT_SUFFIX=
 LAYOUT_TITLE=$(H1 $(TITLE))
 LEGACY_LNAME2=<span id="$1">$(LNAME2 $+)</span>
-PHOBOS_PATH=$(ROOT_DIR)phobos/
+MIR_PATH=$(ROOT_DIR)mir/
 LIST=$(UL $(LIX $1, $+))
 LIX=$(LI $1)$(LIX $+)
 LNAME2=<a class="anchor" title="Permalink to this section" id="$1" href="#$1">$+</a>
@@ -235,9 +237,10 @@ MULTICOL_CELL=<td colspan="$1">$+</td>
 MULTICOL_HEADER=<th colspan="$1">$+</th>
 MULTICOLS=$+
 MULTIROW_HEADER=<th rowspan="$1">$+</th>
-MREF=$(LINK2 $(PHOBOS_PATH)$1$(UNDERSCORE_PREFIXED $+).html, $(D $1$(DOT_PREFIXED $+)))
-MREF_ALTTEXT=$(LINK2 $(PHOBOS_PATH)$2$(UNDERSCORE_PREFIXED_SKIP $+).html, $1)
-MREF1=$(LINK2 $(PHOBOS_PATH)$1.html, $(D $1))
+MREF=$(LINK2 $(MIR_PATH)$1$(UNDERSCORE_PREFIXED $+).html, $(D $1$(DOT_PREFIXED $+)))
+GMREF=$(HTTP $1.$MIR_SITE/$(MIR_PATH)$2$(UNDERSCORE_PREFIXED $+).html, $(D $2$(DOT_PREFIXED $+)))
+MREF_ALTTEXT=$(LINK2 $(MIR_PATH)$2$(UNDERSCORE_PREFIXED_SKIP $+).html, $1)
+MREF1=$(LINK2 $(MIR_PATH)$1.html, $(D $1))
 _=
 
 
@@ -275,7 +278,7 @@ $(SUBMENU_MANUAL
 NAVIGATION_DOCUMENTATION=
 $(SUBMENU_MANUAL
     $(SUBMENU_LINK $(ROOT_DIR)spec/spec.html, Language Reference)
-    $(SUBMENU_LINK $(ROOT_DIR)phobos/index.html, Library Reference)
+    $(SUBMENU_LINK $(ROOT_DIR)mir/index.html, Library Reference)
     $(SUBMENU_LINK $(ROOT_DIR)dmd.html, Command-line Reference)
     $(SUBMENU_LINK_DIVIDER $(ROOT_DIR)comparison.html, Feature Overview)
     $(SUBMENU_LINK $(ROOT_DIR)articles.html, Articles)
@@ -333,14 +336,14 @@ _=
 PC=$(TC p, $1, $+)
 _=
 
-PHOBOSSRC=$(SPANC phobos_src, $(AHTTPS github.com/dlang/phobos/blob/master/$0, $0))
+MIRSRC=$(SPANC mir_src, $(AHTTPS github.com/dlang/mir/blob/master/$0, $0))
 _=
 
 RED=$(SPANC red, $0)
 _=
 
 $(COMMENT
-    The REF macro generates a link to a phobos symbol.
+    The REF macro generates a link to a mir symbol.
 
     The first argument is the symbol name inside its module, without any
     module/package parts, in usual dotted format.
@@ -362,11 +365,13 @@ $(COMMENT
     To clarify, std.container.array is a module, Array is a struct in that
     module, and back is a method of that struct.
 
-    The generated href will be "phobos/std_container_array.html#.Array.back"
-    (the phobos path can be different, of course).
+    The generated href will be "mir/std_container_array.html#.Array.back"
+    (the mir path can be different, of course).
 )
-REF=$(LINK2 $(PHOBOS_PATH)$2$(UNDERSCORE_PREFIXED_SKIP $+).html#.$1, $(D $2$(DOT_PREFIXED_SKIP $+, $1)))
-REF1=$(LINK2 $(PHOBOS_PATH)$2.html#.$1", $(D $1))
+REF=$(LINK2 $(MIR_PATH)$2$(UNDERSCORE_PREFIXED_SKIP $+).html#.$1, $(D $2$(DOT_PREFIXED_SKIP $+, $1)))
+GREF=$(HTTP $1.$MIR_SITE/.$(MIR_PATH)$3$(UNDERSCORE_PREFIXED_SKIP $+).html#.$2, $(D $3$(DOT_PREFIXED_SKIP $+, $2)))
+REF1=$(LINK2 $(MIR_PATH)$2.html#.$1", $(D $1))
+GREF1=$(HTTP $1.$MIR_SITE/.$(MIR_PATH)$3.html#.$2", $(D $2))
 _=
 
 $(COMMENT
@@ -376,10 +381,12 @@ $(COMMENT
     Example:
     $(REF_ALTTEXT the 'back' method, Array.back, std,container,array)
     generates a link like this:
-    <a href="phobos/std_container_array.html#.Array.back">the 'back' method</a>
+    <a href="mir/std_container_array.html#.Array.back">the 'back' method</a>
 )
-REF_ALTTEXT=$(LINK2 $(PHOBOS_PATH)$3$(UNDERSCORE_PREFIXED_SKIP2 $+).html#.$2, $1)
-REF1_ALTTEXT=$(LINK2 $(PHOBOS_PATH)$3.html#.$2", $1)
+REF_ALTTEXT=$(LINK2 $(MIR_PATH)$3$(UNDERSCORE_PREFIXED_SKIP2 $+).html#.$2, $1)
+GREF_ALTTEXT=$(HTTP $1.$MIR_SITE/.$(MIR_PATH)$4$(UNDERSCORE_PREFIXED_SKIP2 $+).html#.$3, $2)
+REF1_ALTTEXT=$(LINK2 $(MIR_PATH)$3.html#.$2", $1)
+GREF1_ALTTEXT=$(HTTP $1.$MIR_SITE/.$(MIR_PATH)$4.html#.$3", $2)
 _=
 
 $(COMMENT
@@ -401,7 +408,7 @@ RUNNABLE_EXAMPLE_ARGS=<code class="runnable-examples-args">$0</code>
 SAMPLESRC=$(SPANC sample_src, $(AHTTPS github.com/dlang/dmd/blob/master/samples/$0, /dmd/samples/d/$0))
 SCINI=$(TC pre, scini notranslate, $0)
 SCRIPTLOAD=<script type="text/javascript" src="$1"$+></script>
-SEARCHDEFAULT_PHOBOS=
+SEARCHDEFAULT_MIR=
 SEARCHDEFAULT_FORUM=
 SEARCHDEFAULT_SPEC=
 SEARCH_BOX=
@@ -413,7 +420,7 @@ SEARCH_BOX=
                 <select id="sitesearch" name="sitesearch" size="1">
                     <option value="dlang.org">Entire Site</option>
                     <option $(SEARCHDEFAULT_SPEC) value="dlang.org/spec">Language</option>
-                    <option $(SEARCHDEFAULT_PHOBOS) value="dlang.org/phobos">Library</option>
+                    <option $(SEARCHDEFAULT_MIR) value="dlang.org/mir">Library</option>
                     <option $(SEARCHDEFAULT_FORUM) value="forum.dlang.org">Forums</option>
                     $(SEARCH_OPTIONS_EXTRA)
                 </select>

@@ -1026,7 +1026,7 @@ table td:not(:last-child), table th:not(:last-child)
 
 /*
   These next two rules are for pages like:
-  http://dlang.org/phobos-prerelease/std_regex.html
+  http://dlang.org/mir-prerelease/std_regex.html
 
   The idea is if we have a list of links, we want space
   to the right of each one. But detecting a list of links
@@ -1186,7 +1186,7 @@ td .d_code2, td .cppcode2, td .cppcode
     font-family: Consolas, "Bitstream Vera Sans Mono", "Andale Mono", Monaco, "DejaVu Sans Mono", "Lucida Console", monospace;
 }
 
-.phobos_src
+.mir_src
 {
     text-overflow: clip;
     overflow: hidden;
@@ -1647,7 +1647,7 @@ div.openInEditorButton i{
     margin-top: 10px;
 }
 
-/* Style for the example run buttons on the Phobos library documentation */
+/* Style for the example run buttons on the Mir library documentation */
 .d_example_buttons {
     text-align: left;
 }

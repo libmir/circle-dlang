@@ -1,7 +1,7 @@
 /**
-Shows a list of the contributors to a Phobos module
+Shows a list of the contributors to a Mir module
 It queries the backend contribs.dlang.io
-Backend source: https://github.com/wilzbach/phobos-contribs
+Backend source: https://github.com/wilzbach/mir-contribs
 
 License:   http://boost.org/LICENSE_1_0.txt, Boost License 1.0
 
@@ -34,7 +34,7 @@ $(document).ready(function()
     }
     else if (modulePath.indexOf("std") == 0 || modulePath.indexOf("etc") == 0)
     {
-        repo = "phobos";
+        repo = "mir";
     }
     else
     {

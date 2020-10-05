@@ -100,11 +100,11 @@ int main(string[] args)
 {
     if (args.length < 2)
     {
-        stderr.writeln("usage: ./modlist <phobos-dir> [--ex=std.internal.] [--ex=core.sys.]");
+        stderr.writeln("usage: ./modlist <mir-dir> [--ex=std.internal.] [--ex=core.sys.]");
         return 1;
     }
 
-    auto phobos = args[1];
+    auto mir = args[1];
     auto excludes = args[2 .. $].map!(ex => ex.chompPrefix("--ex=")).array;
 
     bool included(string mod)
@@ -124,7 +124,7 @@ int main(string[] args)
             tree.insert(name.splitter("."));
     }
     Tree tree;
-    add(phobos, tree);
+    add(mir, tree);
     tree.sort();
 
     writeln("MODULE_MENU=");
