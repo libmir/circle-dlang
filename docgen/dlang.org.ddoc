@@ -1,7 +1,6 @@
 _=Macros for the dlang.org site look and feel. Please keep sorted by name. Multiline macros should keep one _= line before and after for clarity. Also, one _= line should be present when the first letter changes. (The "_="" is needed so there's no extra newline after the last macro defined in a group.)
 
 MIR_SITE=libmir.org
-
 ACRONYM = <acronym title="$+">$1</acronym> ($+)
 ASSIGNEXPRESSION = $(GLINK2 expression, AssignExpression)
 _=
@@ -210,7 +209,7 @@ LAYOUT_PREFIX=
 LAYOUT_SUFFIX=
 LAYOUT_TITLE=$(H1 $(TITLE))
 LEGACY_LNAME2=<span id="$1">$(LNAME2 $+)</span>
-MIR_PATH=$(ROOT_DIR)mir/
+MIR_PATH=$(ROOT_DIR)/
 LIST=$(UL $(LIX $1, $+))
 LIX=$(LI $1)$(LIX $+)
 LNAME2=<a class="anchor" title="Permalink to this section" id="$1" href="#$1">$+</a>
@@ -238,7 +237,7 @@ MULTICOL_HEADER=<th colspan="$1">$+</th>
 MULTICOLS=$+
 MULTIROW_HEADER=<th rowspan="$1">$+</th>
 MREF=$(LINK2 $(MIR_PATH)$1$(UNDERSCORE_PREFIXED $+).html, $(D $1$(DOT_PREFIXED $+)))
-GMREF=$(HTTP $1.$MIR_SITE/$(MIR_PATH)$2$(UNDERSCORE_PREFIXED $+).html, $(D $2$(DOT_PREFIXED $+)))
+GMREF=$(HTTP $1.$(MIR_SITE)/$(MIR_PATH)$2$(UNDERSCORE_PREFIXED2 $+).html, $(D $2$(DOT_PREFIXED $+)))
 MREF_ALTTEXT=$(LINK2 $(MIR_PATH)$2$(UNDERSCORE_PREFIXED_SKIP $+).html, $1)
 MREF1=$(LINK2 $(MIR_PATH)$1.html, $(D $1))
 _=
@@ -369,9 +368,9 @@ $(COMMENT
     (the mir path can be different, of course).
 )
 REF=$(LINK2 $(MIR_PATH)$2$(UNDERSCORE_PREFIXED_SKIP $+).html#.$1, $(D $2$(DOT_PREFIXED_SKIP $+, $1)))
-GREF=$(HTTP $1.$MIR_SITE/.$(MIR_PATH)$3$(UNDERSCORE_PREFIXED_SKIP $+).html#.$2, $(D $3$(DOT_PREFIXED_SKIP $+, $2)))
+GREF=$(HTTP $1.$(MIR_SITE)/$(MIR_PATH)$3$(UNDERSCORE_PREFIXED_SKIP2 $+).html#.$2, $(D $3$(DOT_PREFIXED_SKIP $+, $2)))
 REF1=$(LINK2 $(MIR_PATH)$2.html#.$1", $(D $1))
-GREF1=$(HTTP $1.$MIR_SITE/.$(MIR_PATH)$3.html#.$2", $(D $2))
+GREF1=$(HTTP $1.$(MIR_SITE)/$(MIR_PATH)$3.html#.$2", $(D $2))
 _=
 
 $(COMMENT
@@ -383,10 +382,11 @@ $(COMMENT
     generates a link like this:
     <a href="mir/std_container_array.html#.Array.back">the 'back' method</a>
 )
+
 REF_ALTTEXT=$(LINK2 $(MIR_PATH)$3$(UNDERSCORE_PREFIXED_SKIP2 $+).html#.$2, $1)
-GREF_ALTTEXT=$(HTTP $1.$MIR_SITE/.$(MIR_PATH)$4$(UNDERSCORE_PREFIXED_SKIP2 $+).html#.$3, $2)
+GREF_ALTTEXT=$(HTTP $1.$(MIR_SITE)/$(MIR_PATH)$4$(UNDERSCORE_PREFIXED_SKIP3 $+).html#.$3, $2)
 REF1_ALTTEXT=$(LINK2 $(MIR_PATH)$3.html#.$2", $1)
-GREF1_ALTTEXT=$(HTTP $1.$MIR_SITE/.$(MIR_PATH)$4.html#.$3", $2)
+GREF1_ALTTEXT=$(HTTP $1.$(MIR_SITE)/$(MIR_PATH)$4.html#.$3", $2)
 _=
 
 $(COMMENT
@@ -551,6 +551,7 @@ UNDERSCORE=_
 UNDERSCORE_PREFIXED=_$1$(UNDERSCORE_PREFIXED $+)
 UNDERSCORE_PREFIXED_SKIP=$(UNDERSCORE_PREFIXED $+)
 UNDERSCORE_PREFIXED_SKIP2=$(UNDERSCORE_PREFIXED_SKIP $+)
+UNDERSCORE_PREFIXED_SKIP3=$(UNDERSCORE_PREFIXED_SKIP2 $+)
 _=
 
 VERTROW=$(TR $(TDX $1, $+))

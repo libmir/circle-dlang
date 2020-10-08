@@ -83,9 +83,9 @@ _=
 SEARCH_BOX=
     $(DIVID search-box,
         <form method="get" action="https://google.com/search">
-            <input type="hidden" id="domains" name="domains" value="$(PROJECT).libmir.org">
+            <input type="hidden" id="domains" name="domains" value="$(PROJECT).$(MIR_SITE)">
             <input type="hidden" id="sourceid" name="sourceid" value="google-search">
-            <input type="hidden" id="sitesearch" name="sitesearch" value="$(PROJECT).libmir.org">
+            <input type="hidden" id="sitesearch" name="sitesearch" value="$(PROJECT).$(MIR_SITE)">
             $(SPANID search-query, <input id="q" name="q" placeholder="Search">)
             $(SPANID search-submit, <button type="submit"><i class="fa fa-search"></i><span>go</span></button>)
         </form>
@@ -94,7 +94,7 @@ _=
 
 NAVIGATION=
 $(DIVID cssmenu, $(UL
-    $(MENU_W_SUBMENU_LINK https://libmir.org, Mir Libraries)
+    $(MENU_W_SUBMENU_LINK https://$(MIR_SITE), Mir Libraries)
       $(MIR_PROJECTS)
     $(MENU https://github.com/$(COMPANY)/$(PROJECT), GitHub)
     $(MENU https://forum.dlang.org/group/learn , Forum)
@@ -105,19 +105,19 @@ _=
 
 MIR_PROJECTS=
 $(SUBMENU_MANUAL
-    $(SUBMENU_LINK http://mir-algorithm.libmir.org, mir-algorithm - Base algorithms and types)
-    $(SUBMENU_LINK http://mir-core.libmir.org, mir-core - Slim core library)
-    $(SUBMENU_LINK http://mir-cpuid.libmir.org, mir-cpuid - CPUID identification)
-    $(SUBMENU_LINK http://mir-integral.libmir.org, mir-integral - Integration utilities)
-    $(SUBMENU_LINK http://mir-ion.libmir.org, mir-ion - Json, Ion library)
-    $(SUBMENU_LINK http://mir-optim.libmir.org, mir-optim - Nonlinear programming)
-    $(SUBMENU_LINK http://mir-random.libmir.org, mir-random - Random engines and variables)
-    $(SUBMENU_LINK http://mir-stat.libmir.org, mir-stat - Statistical package)
-    $(SUBMENU_LINK http://mir-lapack.libmir.org, mir-lapack - Linear Algebra wrappers for ndslice)
-    $(SUBMENU_LINK http://mir-blas.libmir.org, mir-blas - CBLAS wrappers for ndslice)
-    $(SUBMENU_LINK http://mir.libmir.org, mir (backports))
-    $(SUBMENU_LINK http://asdf.libmir.org, asdf - Json library)
-    $(SUBMENU_LINK http://lubeck.libmir.org, Kaleidic/lubeck - Linar algebra)
+    $(SUBMENU_LINK http://mir-algorithm.$(MIR_SITE), mir-algorithm - Base algorithms and types)
+    $(SUBMENU_LINK http://mir-core.$(MIR_SITE), mir-core - Slim core library)
+    $(SUBMENU_LINK http://mir-cpuid.$(MIR_SITE), mir-cpuid - CPUID identification)
+    $(SUBMENU_LINK http://mir-integral.$(MIR_SITE), mir-integral - Integration utilities)
+    $(SUBMENU_LINK http://mir-ion.$(MIR_SITE), mir-ion - Json, Ion library)
+    $(SUBMENU_LINK http://mir-optim.$(MIR_SITE), mir-optim - Nonlinear programming)
+    $(SUBMENU_LINK http://mir-random.$(MIR_SITE), mir-random - Random engines and variables)
+    $(SUBMENU_LINK http://mir-stat.$(MIR_SITE), mir-stat - Statistical package)
+    $(SUBMENU_LINK http://mir-lapack.$(MIR_SITE), mir-lapack - Linear Algebra wrappers for ndslice)
+    $(SUBMENU_LINK http://mir-blas.$(MIR_SITE), mir-blas - CBLAS wrappers for ndslice)
+    $(SUBMENU_LINK http://mir.$(MIR_SITE), mir (backports))
+    $(SUBMENU_LINK http://asdf.$(MIR_SITE), asdf - Json library)
+    $(SUBMENU_LINK http://lubeck.$(MIR_SITE), Kaleidic/lubeck - Linar algebra)
 )
 _=
 
