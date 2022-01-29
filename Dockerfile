@@ -12,8 +12,8 @@ RUN curl -fsSLO https://packages.microsoft.com/config/debian/9/prod.list && \
 RUN sudo add-apt-repository "deb http://apt.llvm.org/buster/ llvm-toolchain-buster-10 main"
 RUN sudo apt-get -y -qq update
 RUN sudo apt-get -y -qq install dotnet-sdk-2.2 clang-10 lldb-10 lld-10
-ENV DMD 2.096.0
-ENV LDC 1.26.0
+ENV DMD 2.098.1
+ENV LDC 1.28.1
 RUN curl -fsSLO --retry 3 "https://github.com/ldc-developers/ldc/releases/download/v$LDC/ldc2-$LDC-linux-x86_64.tar.xz"
 RUN tar xf ldc2-$LDC-linux-x86_64.tar.xz \
  && sudo cp -r ldc2-$LDC-linux-x86_64/bin /usr \
