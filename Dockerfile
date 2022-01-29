@@ -1,4 +1,4 @@
-FROM circleci/python:latest
+FROM circleci/python:buster
 WORKDIR /tmp
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 RUN sudo apt-get -y -qq install software-properties-common apt-transport-https make ninja-build libopenblas-dev xz-utils
