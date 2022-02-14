@@ -6,7 +6,8 @@ RUN pip install meson semver
 ENV DMD_tools=2.098.1 LDC=1.28.1 CC=clang CXX=clang++
 RUN curl -fsS https://dlang.org/install.sh | bash -s install ldc -p /usr/local/dlang
 ENV PATH=/usr/local/dlang/ldc-$LDC/bin:$PATH
-COPY dtools_tests_extractor /usr/local/bin
+COPY dtools_tests_extractor
+RUN chmod +x /usr/local/bin/dtools_tests_extractor
 COPY docgen /repo/docgen
 COPY web /repo/web
 COPY meson_options.txt.1 /repo/meson_options.txt.1
